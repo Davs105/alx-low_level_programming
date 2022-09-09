@@ -1,37 +1,49 @@
-#include <stdio.h>
+#include<stdio.h>
 
 /**
-  * main - Prints 3 combination of numbers
-  *
-  * Return: Always (Success)
-  */
+ * main - Entry point
+ *
+ * Description: print all possible different
+ *            combinations of two digits.
+ *
+ * Return: Always 0 (Success)
+*/
+
 int main(void)
 {
-	int c, i, k;
+	int digit1 = 0;
+	int digit2, digit3;
 
-	for (c = '0'; c <= '9'; c++)
+	while (digit1 <= 9)
 	{
-		for (i = '0'; i <= '9'; i++)
+		digit2 = 0;
+		while (digit2 <= 9)
 		{
-			for (k = '0'; k <= '9'; k++)
+			digit3 = 0;
+			while (digit3 <= 9)
 			{
-				if (c < i && i < k)
+				if (digit1 != digit2 &&
+				    digit1 < digit2 &&
+				    digit2 != digit3 &&
+				    digit2 < digit3)
 				{
-					putchar(c);
-					putchar(i);
-					putchar(k);
+					putchar(digit1 + 48);
+					putchar(digit2 + 48);
+					putchar(digit3 + 48);
 
-					if (c != '7')
+					if (digit1 + digit2 + digit3 != 24)
 					{
 						putchar(',');
 						putchar(' ');
 					}
 				}
+				++digit3;
 			}
+			++digit2;
 		}
+		++digit1;
 	}
-
 	putchar('\n');
 
 	return (0);
-
+}

@@ -14,8 +14,9 @@ int main(void)
 			int ch;
 
 				for (ch = 0; ch < 8; ++ch)
-							_putchar(str[ch]);
-					_putchar('\n');
+		_putchar(str[ch]);
 
-						return (0);
-}<F11>
+		_putchar('\n');
+
+		return (0);
+}

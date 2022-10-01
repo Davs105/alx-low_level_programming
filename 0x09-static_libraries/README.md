@@ -1,1 +1,1 @@
-continuation
+static library
